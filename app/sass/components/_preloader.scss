@@ -1,0 +1,24 @@
+/* =================================
+			 PRELOADER
+================================= */
+.loader {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    background: none repeat scroll 0 0 #fff;
+    z-index: 9999;
+
+    &-inner {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 250px;
+        height: 250px;
+        transform: translate(-50%, -50%);
+        background: #fff url("#{$img-dir-path}preloader.gif") center center no-repeat;
+    }
+}

@@ -1,0 +1,62 @@
+// Path
+$img-dir-path: '../images/';
+
+
+// Fonts
+$font-family:      ('Roboto', 'Arial', 'Helvetica', sans-serif);
+$font-size-base:   16px;
+$line-height-base: 1.4;
+$line-height-sm:   1.2;
+
+$font-weight-regular: 400;
+$font-weight-bold:    500;
+
+$font-size-large:  18px;
+$font-size-small:  14px;
+$font-size-xsmall: 12px;
+
+
+// Colors
+$color-accent:       #6bbc2f;
+$color-white:        #fff;
+$color-black:        #000;
+$color-red:          #da2c2c;
+$color-orange:       #ffb91d;
+
+$font-color:         $color-black;
+$heading-color:      $color-black;
+$link-color:         $color-orange;
+
+
+// Animations
+$transition-time:   .25s;
+$transition-effect: ease-out;
+
+
+// Layout
+$layout-padding-h:  15px;
+
+
+// Buttons
+$btn-font-size:       $font-size-base;
+$btn-line-height:     $line-height-base;
+
+$btn-border-radius:   4px;
+$btn-border-width:    1px;
+$btn-padding-h:       15px;
+$btn-padding-v:       9px;
+$btn-padding-v-small: 7px;
+
+$btn-orange-color:        $color-white;
+$btn-orange-bg:           $color-orange;
+$btn-orange-border-color: #e39200;
+$btn-orange-text-shadow:  #e39200;
+
+
+// Forms
+$input-border-color:        $color-white;
+
+$input-text-color:          $font-color;
+
+$form-label-color:          $color-black;
+$form-label-font-size:      $font-size-small;

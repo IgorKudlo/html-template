@@ -1,0 +1,29 @@
+/* =================================
+			 BUTTONS
+================================= */
+.btn {
+    position: relative;
+    display: inline-block;
+    padding: 0.313em 0.625em;
+    color: $color-black;
+    background-color: transparent;
+    border: 2px solid $color-accent;
+    border-radius: 2px;
+    text-align: center;
+    transition: all $transition-time $transition-effect;
+    cursor: pointer;
+
+    &:focus,
+    &:hover {
+        color: #000;
+        text-decoration: none;
+    }
+
+    &:hover {
+        background-color: lighten($color-accent, 5%)
+    }
+
+    &:active {
+        background-color: darken($color-accent, 5%)
+    }
+}

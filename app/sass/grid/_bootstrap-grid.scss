@@ -1,0 +1,21 @@
+/**
+* Bootstrap Grid  4 version
+**/
+
+@at-root {
+  @-ms-viewport { width: device-width; } // stylelint-disable-line at-rule-no-vendor-prefix
+}
+
+@import "functions";
+@import "variables";
+
+//
+// Grid mixins
+//
+
+@import "mixins/breakpoints";
+@import "mixins/grid-framework";
+@import "mixins/grid";
+
+@import "grid";
+@import "utilities/flex";

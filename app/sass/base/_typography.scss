@@ -1,0 +1,46 @@
+//@include fonts("NameFont", "path");
+
+// @include fonts("Arimo", "ArimoBold", bold);
+// @include fonts("Arimo", "ArimoBoldItalic", bold, italic);
+// @include fonts("Arimo", "ArimoItalic", italic);
+// @include fonts("Arimo", "ArimoRegular");
+
+/* =================================
+			 TYPOGRAPHY
+================================= */
+b,
+strong {
+    font-weight: $font-weight-bold;
+}
+
+a {
+    -webkit-tap-highlight-color: transparent;
+    transition: color $transition-time $transition-effect;
+
+    @include links-all {
+        color: $link-color;
+        text-decoration: none;
+    }
+}
+
+p { margin: 1em 0; }
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 1em 0;
+    line-height: $line-height-sm;
+    font-weight: $font-weight-regular;
+}
+
+h1 { font-size: rem(36px); }
+
+h2 { font-size: rem(32px); }
+
+h3 { font-size: rem(28px); }
+
+h4 { font-size: rem(24px); }
+
+h5 { font-size: rem(18px); }
+
+h6 { font-size: rem(16px); }
+
+.text-bold { font-weight: $font-weight-bold; }
