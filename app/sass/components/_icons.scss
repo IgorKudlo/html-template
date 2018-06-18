@@ -4,4 +4,8 @@
 .icon {
     display: inline-block;
     vertical-align: middle;
+
+    //&-employee {
+    //    @include svg-icon('employee.svg', 20px, 20px);
+    //}
 }
