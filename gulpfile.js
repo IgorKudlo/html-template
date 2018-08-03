@@ -2,6 +2,10 @@ var gulp         = require('gulp');
 var sass         = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
 var spritesmith  = require('gulp.spritesmith');
+var svgSprite    = require('gulp-svg-sprite');
+var svgmin       = require('gulp-svgmin');
+var cheerio      = require('gulp-cheerio');
+var replace      = require('gulp-replace');
 var ttf2woff     = require('gulp-ttf2woff');
 var ttf2woff2    = require('gulp-ttf2woff2');
 var browserSync  = require('browser-sync');
@@ -39,6 +43,53 @@ gulp.task('sprite', function () {
     }));
     spriteData.img.pipe(gulp.dest('app/images'));
     spriteData.css.pipe(gulp.dest('app/sass/sprite'));
+});
+
+
+// sprite svg
+gulp.task('svgSpriteBuild', function () {
+    return gulp.src('app/images/svg/*.svg')
+    // minify svg
+        .pipe(svgmin({
+            js2svg: {
+                pretty: true
+            }
+        }))
+        // remove all fill, style and stroke declarations in out shapes
+        .pipe(cheerio({
+            run: function ($) {
+                $('[fill]').removeAttr('fill');
+                $('[stroke]').removeAttr('stroke');
+                $('[style]').removeAttr('style');
+            },
+            parserOptions: {xmlMode: true}
+        }))
+        // cheerio plugin create unnecessary string '&gt;', so replace it.
+        .pipe(replace('&gt;', '>'))
+        // build svg sprite
+        .pipe(svgSprite({
+            shape: {
+                dimension: {
+                    maxWidth: 32,
+                    maxHeight: 32
+                },
+                spacing: {
+                    padding: 5
+                }
+            },
+            mode: {
+                symbol: {
+                    sprite: "../sprite.svg",
+                    render: {
+                        scss: {
+                            dest:'../../sass/sprite/_sprite-svg.scss',
+                            template: 'app/sass/sprite/_sprite-svg-template.scss'
+                        }
+                    }
+                }
+            }
+        }))
+        .pipe(gulp.dest('app/images/'));
 });
 
 
