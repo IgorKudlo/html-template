@@ -1,6 +1,11 @@
 $(function () {
 
     /**
+     * svg4everybody
+     */
+    svg4everybody();
+
+    /**
      * main-menu
      **/
     var menu = $('.hide-menu');
